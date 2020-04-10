@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST">
+{% csrf_token %}
+    {% if rows_var and cols_var %}
+        <textarea name="input_text" cols={{ cols_var }} rows={{ rows_var }} style="resize:none">{{text}}</textarea>
+    {% else %}
+        <textarea name="input_text" cols="30" rows="10" style="resize:none">{{text}}</textarea>
+    {% endif %}
+
+<button type="submit">Upload text</button>
+</form>
+{% endblock content %}
+

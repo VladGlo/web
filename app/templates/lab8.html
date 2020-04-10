@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <ul>
+    {% for exam in exam_list %}
+        <li>id: {{ exam.exam_id }}, stud_id: {{ exam.stud_id }}, subj_id: {{ exam.subj_id }}, mark: {{ exam.mark }}, date: {{ exam.exam_date }}</li>
+    {% empty %}
+        <li>Sorry, no exams in this list.</li>
+    {% endfor %}
+    </ul>
+
+{% endblock content %}
+
